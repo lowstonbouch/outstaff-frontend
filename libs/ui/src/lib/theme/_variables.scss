@@ -1,0 +1,58 @@
+@use 'functions' as *;
+
+$color-page-bg: #f8fafc;
+$color-surface: #fff;
+
+$color-text: #0f172a;
+$color-text-body: #334155;
+$color-text-muted: #64748b;
+
+$color-border: #e2e8f0;
+$color-border-hover: #cbd5e1;
+
+$color-error: #dc2626;
+$color-error-text: #b91c1c;
+$color-error-bg: #fef2f2;
+
+$color-primary: #2563eb;
+$color-primary-hover: #1d4ed8;
+
+$color-secondary-bg: #f1f5f9;
+$color-secondary-bg-hover: #e2e8f0;
+$color-secondary-text: #475569;
+
+$color-danger: #dc2626;
+$color-danger-hover: #b91c1c;
+
+$color-link-muted: #64748b;
+$color-link-muted-hover: #334155;
+
+$space-xs: rem(8);
+$space-sm: rem(12);
+$space-md: rem(16);
+$space-lg: rem(20);
+$space-xl: rem(24);
+$space-2xl: rem(28);
+$space-3xl: rem(32);
+
+$radius-sm: rem(6);
+$radius-md: rem(8);
+$radius-lg: rem(10);
+$radius-xl: rem(12);
+
+$shadow-card: 0 rem(1) rem(3) rgba(0, 0, 0, 0.06);
+$shadow-card-hover: 0 rem(4) rem(12) rgba(0, 0, 0, 0.08);
+$shadow-button-hover: 0 rem(2) rem(8) rgba(0, 0, 0, 0.12);
+
+$breakpoint-sm: 480px;
+$font-size-sm: rem(14);
+$font-size-base: rem(15);
+$font-size-lg: rem(16);
+$font-size-xl: rem(18);
+$font-size-2xl: rem(22);
+$font-size-3xl: rem(24);
+$font-size-4xl: rem(26);
+$font-size-5xl: rem(28);
+
+$transition-fast: 0.15s ease;
+$transition-base: 0.2s ease;

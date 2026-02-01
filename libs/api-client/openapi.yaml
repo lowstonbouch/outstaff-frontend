@@ -1,0 +1,93 @@
+openapi: 3.1.0
+info:
+  title: Articles API
+  version: 1.0.0
+
+servers:
+  - url: /api
+    description: API base
+
+paths:
+  /articles:
+    get:
+      operationId: getArticles
+      tags:
+        - Articles
+      responses:
+        '200':
+          description: List of articles
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/ArticleListItem'
+
+  /articles/{id}:
+    get:
+      operationId: getArticle
+      tags:
+        - Articles
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Article details
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Article'
+        '404':
+          description: Not found
+    delete:
+      operationId: deleteArticle
+      tags:
+        - Articles
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Deleted
+        '404':
+          description: Not found
+
+components:
+  schemas:
+    Article:
+      type: object
+      required:
+        - id
+        - title
+        - content
+        - createdAt
+      properties:
+        id:
+          type: string
+        title:
+          type: string
+        content:
+          type: string
+        createdAt:
+          type: string
+          format: date-time
+    ArticleListItem:
+      type: object
+      required:
+        - id
+        - title
+        - content
+      properties:
+        id:
+          type: string
+        title:
+          type: string
+        content:
+          type: string

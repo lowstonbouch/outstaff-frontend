@@ -1,0 +1,63 @@
+@use '../theme/variables' as *;
+@use '../theme/mixins' as *;
+
+.button {
+  padding: $space-xs $space-md;
+  border-radius: $radius-md;
+  font-size: $font-size-base;
+  font-weight: 500;
+  cursor: pointer;
+  border: none;
+  transition: background-color $transition-base, transform $transition-base, box-shadow $transition-base;
+
+  &:hover:not(:disabled) {
+    transform: translateY(-1px);
+    box-shadow: $shadow-button-hover;
+  }
+
+  &:active:not(:disabled) {
+    transform: translateY(0);
+    box-shadow: none;
+  }
+
+  @include focus-ring;
+
+  &:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+
+  &_secondary {
+    background-color: $color-secondary-bg;
+    color: $color-secondary-text;
+
+    &:hover:not(:disabled) {
+      background-color: $color-secondary-bg-hover;
+    }
+  }
+
+  &_danger {
+    background-color: $color-danger;
+    color: $color-surface;
+
+    &:hover:not(:disabled) {
+      background-color: $color-danger-hover;
+    }
+  }
+
+  &:not(.button_secondary):not(.button_danger) {
+    background-color: $color-primary;
+    color: $color-surface;
+
+    &:hover:not(:disabled) {
+      background-color: $color-primary-hover;
+    }
+  }
+}
+
+@include respond-to($breakpoint-sm) {
+  .button {
+    padding: $space-sm $space-md;
+    font-size: $font-size-sm;
+  }
+}

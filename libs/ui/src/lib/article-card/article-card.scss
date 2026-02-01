@@ -1,0 +1,54 @@
+@use '../theme/variables' as *;
+@use '../theme/mixins' as *;
+
+.card {
+  @include card-surface;
+  padding: $space-lg $space-xl;
+  border-radius: $radius-lg;
+  transition: box-shadow $transition-base, border-color $transition-base;
+
+  &:hover {
+    box-shadow: $shadow-card-hover;
+    border-color: $color-border-hover;
+  }
+
+  &__title {
+    margin: 0 0 $space-xs;
+    font-size: $font-size-xl;
+    font-weight: 600;
+    color: $color-text;
+    line-height: 1.35;
+  }
+
+  &__description {
+    margin: 0 0 $space-md;
+    font-size: $font-size-base;
+    color: $color-text-muted;
+    line-height: 1.5;
+  }
+
+  &__actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: $space-xs;
+  }
+}
+
+@include respond-to($breakpoint-sm) {
+  .card {
+    padding: $space-md $space-lg;
+
+    &__title {
+      font-size: $font-size-lg;
+    }
+
+    &__description {
+      font-size: $font-size-sm;
+      margin-bottom: $space-sm;
+    }
+
+    &__actions {
+      flex-direction: column;
+    }
+  }
+}

@@ -1,0 +1,29 @@
+@use 'variables' as *;
+@use 'functions' as *;
+
+@mixin respond-to($max-width) {
+  @media (max-width: $max-width) {
+    @content;
+  }
+}
+
+@mixin focus-ring {
+  &:focus-visible {
+    outline: rem(2) solid currentColor;
+    outline-offset: rem(2);
+  }
+}
+
+@mixin card-surface {
+  background: $color-surface;
+  border: 1px solid $color-border;
+  border-radius: $radius-lg;
+  box-shadow: $shadow-card;
+}
+
+@mixin error-block {
+  background: $color-error-bg;
+  color: $color-error-text;
+  border-radius: $radius-md;
+  border-left: rem(4) solid $color-error;
+}

@@ -1,0 +1,25 @@
+{
+  "extends": "./tsconfig.base.json",
+  "compileOnSave": false,
+  "files": [],
+  "references": [
+    {
+      "path": "./apps/outstaff-frontend"
+    },
+    {
+      "path": "./libs/api-client"
+    },
+    {
+      "path": "./libs/ui"
+    },
+    {
+      "path": "./libs/features-articles"
+    },
+    {
+      "path": "./libs/msw"
+    },
+    {
+      "path": "./libs/utils"
+    }
+  ]
+}

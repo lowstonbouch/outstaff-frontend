@@ -1,0 +1,12 @@
+{
+  "name": "@outstaff-frontend/outstaff-frontend",
+  "version": "0.0.1",
+  "private": true,
+  "dependencies": {
+    "@outstaff-frontend/api-client": "workspace:*",
+    "@outstaff-frontend/features-articles": "workspace:*",
+    "@outstaff-frontend/ui": "workspace:*",
+    "@outstaff-frontend/msw": "workspace:*",
+    "@outstaff-frontend/utils": "workspace:*"
+  }
+}

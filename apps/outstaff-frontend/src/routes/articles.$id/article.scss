@@ -1,0 +1,89 @@
+@use 'functions' as *;
+@use 'variables' as *;
+@use 'mixins' as *;
+
+.page {
+  max-width: rem(720);
+  margin: 0 auto;
+  padding: $space-3xl $space-lg;
+  min-height: 100vh;
+
+  &__back {
+    display: inline-flex;
+    align-items: center;
+    margin-bottom: $space-2xl;
+    padding: $space-xs 0;
+    color: $color-link-muted;
+    font-size: $font-size-base;
+    transition: color $transition-fast;
+
+    &:hover {
+      color: $color-link-muted-hover;
+    }
+  }
+
+  &__loading {
+    margin: 0;
+    padding: $space-3xl;
+    text-align: center;
+    color: $color-text-muted;
+    font-size: $font-size-base;
+  }
+
+  &__error {
+    margin: 0;
+    padding: $space-md $space-lg;
+    @include error-block;
+    font-size: $font-size-base;
+  }
+}
+
+.article {
+  @include card-surface;
+  padding: $space-3xl $space-2xl;
+  border-radius: $radius-xl;
+
+  &__title {
+    margin: 0 0 $space-sm;
+    font-size: $font-size-4xl;
+    font-weight: 700;
+    color: $color-text;
+    line-height: 1.3;
+    letter-spacing: -0.02em;
+  }
+
+  &__date {
+    margin: 0 0 $space-lg;
+    font-size: $font-size-sm;
+    color: $color-text-muted;
+  }
+
+  &__content {
+    font-size: $font-size-lg;
+    line-height: 1.7;
+    color: $color-text-body;
+    white-space: pre-wrap;
+  }
+}
+
+@include respond-to($breakpoint-sm) {
+  .page {
+    padding: $space-lg $space-md;
+
+    &__back {
+      margin-bottom: $space-lg;
+    }
+  }
+
+  .article {
+    padding: $space-xl $space-lg;
+
+    &__title {
+      font-size: $font-size-2xl;
+    }
+
+    &__content {
+      font-size: $font-size-base;
+    }
+  }
+}
