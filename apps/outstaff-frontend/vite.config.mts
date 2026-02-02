@@ -7,6 +7,9 @@ const themePath = path.resolve(import.meta.dirname, '../../libs/ui/src/lib/theme
 export default defineConfig(() => ({
   root: import.meta.dirname,
   cacheDir: '../../node_modules/.vite/apps/outstaff-frontend',
+  resolve: {
+    conditions: ['@outstaff-frontend/source', 'import', 'module', 'browser', 'default'],
+  },
   server: {
     port: 4200,
     host: 'localhost',
